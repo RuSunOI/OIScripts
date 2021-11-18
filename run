@@ -1,0 +1,16 @@
+if [ $# -ne 1 ] ; then
+	p=test
+else
+	p=$1
+fi
+./complie $p
+if [ $? -ne 0 ] ; then 
+	echo CE 
+	exit 1
+fi
+echo -e "Running Time:\c"：
+/usr/bin/time -f "%Us" ./$p < test.in > test.out
+if [ $? -ne 0 ] ; then 
+	echo RE
+	exit 1
+fi

@@ -1,0 +1,39 @@
+./complie data
+if [ $? -ne 0 ] ; then 
+	echo CE:data.cpp
+	exit
+fi
+./complie std
+if [ $? -ne 0 ] ; then 
+	echo CE:std.cpp
+	exit
+fi
+./complie test
+if [ $? -ne 0 ] ; then 
+	echo CE:test.cpp
+	exit
+fi
+
+./data
+# python3 data.py
+./std <test.in>test.ans
+./run
+if [ $? -ne 0 ] ; then 
+	echo RE
+	exit 1
+fi
+./cmp
+while [ $? -eq 0 ]
+do
+	echo AC
+	./data
+	# python3 data.py
+	./std <test.in>test.ans
+	./run
+	if [ $? -ne 0 ] ; then 
+		echo RE
+		exit 1
+	fi
+	./cmp
+done
+echo WA
