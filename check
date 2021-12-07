@@ -17,7 +17,12 @@ fi
 ./data
 # python3 data.py
 ./std <test.in>test.ans
-./run
+echo -e "Running Time:\c"：
+/usr/bin/time -f "%Us" ./test < test.in > test.out
+if [ $? -ne 0 ] ; then 
+	echo RE
+	exit 1
+fi
 if [ $? -ne 0 ] ; then 
 	echo RE
 	exit 1
@@ -29,7 +34,12 @@ do
 	./data
 	# python3 data.py
 	./std <test.in>test.ans
-	./run
+	echo -e "Running Time:\c"：
+	/usr/bin/time -f "%Us" ./test < test.in > test.out
+	if [ $? -ne 0 ] ; then 
+		echo RE
+		exit 1
+	fi
 	if [ $? -ne 0 ] ; then 
 		echo RE
 		exit 1

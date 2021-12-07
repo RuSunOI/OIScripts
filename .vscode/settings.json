@@ -90,8 +90,10 @@
 		"span": "cpp",
 		"stop_token": "cpp",
 		"variant": "cpp",
-		"climits": "cpp"
+		"climits": "cpp",
+		"stack": "cpp"
 	},
 	"editor.insertSpaces": false,
 	"editor.detectIndentation": false,
+	"editor.mouseWheelZoom": true,
 }

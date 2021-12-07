@@ -1,9 +1,9 @@
 @echo off
-g++ data.cpp -o data.exe -Wall -std=c++14 -O2
+g++ data.cpp -o data.exe -Wall -std=c++14 -O2 -Wl,--stack=2147483647
 if %errorlevel% neq 0 echo CE:data.cpp & exit
-g++ std.cpp -o std.exe -Wall -std=c++14 -O2
+g++ std.cpp -o std.exe -Wall -std=c++14 -O2 -Wl,--stack=2147483647
 if %errorlevel% neq 0 echo CE:std.cpp & exit
-g++ test.cpp -o test.exe -Wall -std=c++14 -O2
+g++ test.cpp -o test.exe -Wall -std=c++14 -O2 -Wl,--stack=2147483647
 if %errorlevel% neq 0 echo CE:test.cpp & exit
 :h
 .\data

@@ -1,7 +1,7 @@
 @echo off
 set p=%1
 if "%p%"=="" (set p=test)
-g++ %p%.cpp -o %p%.exe -Wall -std=c++14 -O2
+g++ %p%.cpp -o %p%.exe -Wall -std=c++14 -O2 -Wl,--stack=2147483647
 if %errorlevel% neq 0 echo CE & exit
 set /a StartS=1%time:~6,2%
 set /a StartH=1%time:~9,2%
