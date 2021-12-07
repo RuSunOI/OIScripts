@@ -18,6 +18,13 @@ struct Edge
 {
 	int u, v;
 	LL w;
+	bool operator<(const Edge &_) const
+	{
+		if (u != _.u)
+			return u < _.u;
+		if (v != _.v)
+			return v < _.v;
+	}
 };
 /// m ranges in 1...n
 struct Range
@@ -81,12 +88,12 @@ struct Tree
 		withWeight = true;
 		Tree t(n, type);
 		edg = t.edg;
-		for (Edge i : edg)
+		for (Edge &i : edg)
 			i.w = rd(_l, _r);
 	}
-	void print()
+	void print(char *c)
 	{
-		printf("%d\n", n);
+		printf("%d %s\n", n, c);
 		for (Edge i : edg)
 		{
 			printf("%d %d", i.u, i.v);
@@ -138,12 +145,12 @@ struct Map
 		withWeight = true;
 		Map t(n, m, type);
 		edg = t.edg;
-		for (Edge i : edg)
+		for (Edge &i : edg)
 			i.w = rd(_l, _r);
 	}
-	void print()
+	void print(char *c)
 	{
-		printf("%d %d\n", n, m);
+		printf("%d %d %s\n", n, m, c);
 		for (Edge i : edg)
 		{
 			printf("%d %d", i.u, i.v);
