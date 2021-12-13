@@ -10,8 +10,8 @@ typedef pair<int, int> PII;
 LL rd(LL l, LL r)
 {
 	LL res = 1;
-	while (res < (r - l + 1))
-		res *= rand();
+	for (int t = 0; res < r - l + 1; t++)
+		res += rand() << t;
 	return l + res % (r - l + 1);
 }
 struct Edge
