@@ -1,7 +1,7 @@
 @echo off
 set p=%1
 if "%p%"=="" (set p=test)
-g++ %p%.cpp -o %p%.exe -Wall -std=c++14 -O2 -Wl,--stack=2147483647
+g++ -g %p%.cpp -o %p%.exe -Wall -std=c++14 -O2 -Wl,--stack=2147483647
 if %errorlevel% neq 0 echo CE & exit
 set /a StartS=1%time:~6,2%
 set /a StartH=1%time:~9,2%
@@ -16,3 +16,5 @@ set /p="Running Time:"<nul
 set /p="%diffS%."<nul
 if %diffH% lss 10 set /p="0"<nul
 echo %diffH%s
+echo output
+type test.out

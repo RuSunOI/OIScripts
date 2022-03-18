@@ -1,10 +1,11 @@
 {
-	"editor.fontSize": 22,
+	"editor.fontSize": 20,
 	"editor.formatOnPaste": true,
 	"editor.formatOnSave": true,
 	"editor.minimap.enabled": false,
 	// "editor.fontFamily": "Fira Code",
 	"editor.fontLigatures": true,
+	"editor.mouseWheelZoom": true,
 	"files.associations": {
 		"*.tcc": "cpp",
 		"ostream": "cpp",
@@ -91,9 +92,16 @@
 		"stop_token": "cpp",
 		"variant": "cpp",
 		"climits": "cpp",
-		"stack": "cpp"
+		"stack": "cpp",
+		"cassert": "cpp",
+		"ccomplex": "cpp",
+		"cfloat": "cpp",
+		"ciso646": "cpp",
+		"cstdalign": "cpp",
+		"cstdbool": "cpp",
+		"ctgmath": "cpp",
+		"filesystem": "cpp",
+		"locale": "cpp",
+		"version": "cpp"
 	},
-	"editor.insertSpaces": false,
-	"editor.detectIndentation": false,
-	"editor.mouseWheelZoom": true,
 }

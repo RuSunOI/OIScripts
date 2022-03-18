@@ -12,7 +12,7 @@
 				"${fileDirname}/${fileBasenameNoExtension}",
 				"-Wall",
 				"-std=c++14",
-				"-Wl,--stack=2147483647",
+				// "-O2"
 			],
 			"options": {
 				"cwd": "${fileDirname}"
@@ -38,6 +38,7 @@
 				"-Wall",
 				"-std=c++14",
 				"-Wl,--stack=2147483647",
+				// "-O2",
 			],
 			"options": {
 				"cwd": "${fileDirname}"

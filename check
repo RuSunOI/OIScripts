@@ -1,23 +1,22 @@
-./complie data
+./compile data
 if [ $? -ne 0 ] ; then 
 	echo CE:data.cpp
 	exit
 fi
-./complie std
+./compile std
 if [ $? -ne 0 ] ; then 
 	echo CE:std.cpp
 	exit
 fi
-./complie test
+./compile test
 if [ $? -ne 0 ] ; then 
 	echo CE:test.cpp
 	exit
 fi
 
 ./data
-# python3 data.py
 ./std <test.in>test.ans
-echo -e "Running Time:\c"：
+echo -e "Running Time:\c"
 /usr/bin/time -f "%Us" ./test < test.in > test.out
 if [ $? -ne 0 ] ; then 
 	echo RE
@@ -32,9 +31,8 @@ while [ $? -eq 0 ]
 do
 	echo AC
 	./data
-	# python3 data.py
 	./std <test.in>test.ans
-	echo -e "Running Time:\c"：
+	echo -e "Running Time:\c":
 	/usr/bin/time -f "%Us" ./test < test.in > test.out
 	if [ $? -ne 0 ] ; then 
 		echo RE
