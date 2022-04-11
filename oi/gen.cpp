@@ -1,4 +1,6 @@
 #include <cstdio>
+#include <ctime>
+#include <cstdlib>
 using namespace std;
 template <class Type>
 void read (Type &x)
@@ -19,8 +21,13 @@ void write (Type x)
     x > 9 && (write(x / 10), 0);
     putchar('0' + x % 10);
 }
+int rd (int l, int r)
+{
+    return rand() % (r - l + 1) + l;
+}
 int main ()
 {
+    srand(time(NULL));
     
     return 0;
 }

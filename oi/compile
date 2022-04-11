@@ -3,4 +3,8 @@ do
     echo --------------------
     echo in $i
     g++ $i.cpp -o $i -Wall
+    if [ $? -eq 0 ]
+    then
+        echo Compiling Completed
+    fi
 done

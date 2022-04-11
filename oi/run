@@ -1,6 +1,5 @@
 go ()
 {
-    echo ---------------
     ./compile ./$1
     if [ $? -ne 0 ]
     then
@@ -15,6 +14,7 @@ go ()
     fi
     echo output for $1
     cat $1.out
+    echo
 }
 
 if [ $# -eq 0 ]

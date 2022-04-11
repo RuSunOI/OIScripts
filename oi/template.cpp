@@ -21,6 +21,6 @@ void write (Type x)
 }
 int main ()
 {
-
+    
     return 0;
 }
