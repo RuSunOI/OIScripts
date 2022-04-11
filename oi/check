@@ -1,0 +1,51 @@
+./compile test
+if [ $? -ne 0 ] ;
+then
+    echo CE in test
+    exit
+fi
+./compile std
+if [ $? -ne 0 ] ;
+then
+    echo CE in std
+    exit
+fi
+./compile gen
+if [ $? -ne 0 ] ;
+then
+    echo CE in gen
+    exit
+fi
+
+T=0
+
+while [ $? -eq 0 ]
+do
+    echo --------------------
+    if [ $T -ne 0 ] ;
+    then
+        echo Cases $T AC
+    fi
+    let T+=1
+    ./gen > input
+    if [ $? -ne 0 ]
+    then
+        echo RE in gen
+        exit
+    fi
+    ./test < input > test.out
+    if [ $? -ne 0 ]
+    then
+        echo RE in test
+        exit
+    fi
+    ./std < input> std.out
+    if [ $? -ne 0 ]
+    then
+        echo RE in std
+        exit
+    fi
+    ./cmp
+done
+
+echo Cases $T WA

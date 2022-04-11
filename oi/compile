@@ -1,0 +1,6 @@
+for i in $*
+do
+    echo --------------------
+    echo in $i
+    g++ $i.cpp -o $i -Wall
+done
