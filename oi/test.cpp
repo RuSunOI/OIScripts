@@ -5,7 +5,7 @@ void read (Type &x)
 {
     char c;
     bool flag = false;
-    while ((c = getchar()) < '0' && c > '9')
+    while ((c = getchar()) < '0' || c > '9')
         c == '-' && (flag = true);
     x = c - '0';
     while ((c = getchar()) >= '0' && c <= '9')
